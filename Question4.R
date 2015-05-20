@@ -1,13 +1,13 @@
 # Coursera JHU Exploratory Data Analysis
 # Project 2
 library(dplyr)
-library(ggplot2)
 
 # Load data sets
 directory <- paste(getwd(), "Data", sep = "/")
 figDirectory = paste(getwd(), "Figures", sep = "/")
 pm25 <- readRDS(paste(directory, "summarySCC_PM25.rds", sep = "/"))
-sourceClass <- readRDS(paste(directory, "Source_Classification_Code.rds", sep = "/"))
+sourceClass <- readRDS(paste(directory, "Source_Classification_Code.rds",
+                             sep = "/"))
 
 # Question 4: Across the United States, how have emissions from coal
 # combustion-related sources changed from 1999–2008?
