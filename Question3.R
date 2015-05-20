@@ -17,6 +17,7 @@ sourceClass <- readRDS(paste(directory, "Source_Classification_Code.rds", sep = 
 
 # Sum the emissions by year
 q3 <- pm25 %>%
+    filter(fips == "24510") %>%
     group_by(type, year) %>%
     summarise(sum(Emissions))
 
@@ -33,7 +34,7 @@ ggplot(q3, aes(Year, Emissions)) +
     geom_point(aes(color = Type)) +
     geom_smooth(method = "lm", se = FALSE) +
     facet_grid(Type ~ ., scales = "free_y") +
-    xlab("Year") + ylab("PM2.5 Emissions") +
+    xlab("Year") + ylab("PM2.5 Emissions in Baltimore City, MD") +
     ggtitle("PM2.5 Emissions by Type 1999 - 2008") +
     scale_x_continuous(breaks = c(1999, 2002, 2005, 2008))
 dev.off()
